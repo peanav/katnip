@@ -2,12 +2,16 @@ require 'less'
 
 namespace :assets do
   desc 'Precompile assets for heroku push'
-  task :precompile => [:build_js, :build_less]
+  task :precompile => [:heroku_bins :build_js, :build_less]
+
+  task :heroku_bins do
+    ENV['PATH'] = "#{File.join(Dir.pwd,'bin')}:" + ENV['PATH']
+  end
 
   desc 'Build JS'
   task :build_js do
     Dir.chdir "public/scripts" do
-      sh "PATH=~/bin:$PATH node r.js -o baseUrl=. name=lib/almond.js include=main out=main-built.js wrap=true"
+      sh "node r.js -o baseUrl=. name=lib/almond.js include=main out=main-built.js wrap=true"
     end
   end
 
