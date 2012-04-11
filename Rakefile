@@ -1,4 +1,6 @@
 require 'less'
+require 'rake/testtask'
+
 
 namespace :assets do
   desc 'Precompile assets for heroku push'
@@ -28,4 +30,9 @@ namespace :assets do
       end
     end
   end
+end
+
+Rake::TestTask.new do |t|
+    t.libs = ['spec', 'lib']
+    t.test_files = Dir['spec/**/*_spec.rb']
 end
