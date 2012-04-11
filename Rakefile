@@ -2,7 +2,7 @@ require 'less'
 
 namespace :assets do
   desc 'Precompile assets for heroku push'
-  task :precompile => [:heroku_bins :build_js, :build_less]
+  task :precompile => [:heroku_bins, :build_js, :build_less]
 
   task :heroku_bins do
     ENV['PATH'] = "#{File.join(Dir.pwd,'bin')}:" + ENV['PATH']
