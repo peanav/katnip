@@ -1,7 +1,7 @@
 require 'less'
 
 namespace :assets do
-  task :precomple => [:build_js, :build_less]
+  task :precompile => [:build_js, :build_less]
 
   task :build_js do
     Dir.chdir "public/scripts" do
