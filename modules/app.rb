@@ -6,9 +6,9 @@ class KatalusApp < Sinatra::Base
     slim :index
   end
 
-  get '/stylesheets/bootstrap.css' do
+  get '/styles/*.css' do |sheet_name|
     content_type :css
-    less :'less/bootstrap', :paths => ['views/less']
+    less :"less/#{sheet_name}", :paths => ['views/less']
   end
 
 end
