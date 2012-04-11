@@ -12,7 +12,7 @@ gem 'puma'
 #required for heroku to let us use node to precompile js
 gem 'execjs', :require => false
 
-group :development do
-  gem 'rspec'
-  gem 'guard'
+group :test do
+  gem 'guard-minitest'
+  gem 'rack-test'
 end
