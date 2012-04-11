@@ -1,4 +1,4 @@
-# Katalus Bootstrap
+# Katnip
 
 This project is a nice starting point with some baked in goodies
 

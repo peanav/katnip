@@ -15,6 +15,17 @@ head
   meta charset="utf-8"
   meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   link href="/styles/bootstrap.css" rel="stylesheet"
+  less:
+    header {
+      margin: 100px 0 0 0;
+      text-align: center;
+
+      h1 {
+        font-size: 80px;
+        line-height: 90px;
+        margin-bottom: 20px;
+      }
+    }
 body
   #container.container
   script src=@js_app[:src] data-main=@js_app[:data_main] type="text/javascript"

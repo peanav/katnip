@@ -6,7 +6,7 @@ define([
 ],
 function($, Backbone, Mustache, template) {
   return KatalusView = Backbone.View.extend({
-    className: 'hero-unit',
+    tagName: 'header',
     render: function() {
       this.$el.append( Mustache.render(template) );
       return this;
