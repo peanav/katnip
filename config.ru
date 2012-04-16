@@ -9,10 +9,6 @@ if(ENV['RACK_ENV'] == 'development')
   use Rack::LiveReload
 end
 
-Sinatra::Base.configure do |c|
-  c.helpers Sinatra::ContentFor
-end
-
 map '/' do
   run KatalusApp
 end
