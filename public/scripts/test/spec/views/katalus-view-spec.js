@@ -6,8 +6,8 @@ define(['views/katalus-view'], function(View) {
       view = new View();
     });
 
-    it('should be a hero', function() {
-      view.className.should.equal('hero-unit');
+    it('should be a header', function() {
+      view.tagName.should.equal('header');
     });
   });
 });

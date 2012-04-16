@@ -4,3 +4,7 @@ guard 'minitest' do
   watch(%r|^spec/spec_helper\.rb|)    { "spec" }
   watch(%r|^spec/integration_helper\.rb|)    { "spec" }
 end
+
+guard 'livereload' do
+  watch(%r{public/scripts.+\.(js|html)})
+end

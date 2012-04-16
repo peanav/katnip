@@ -15,4 +15,6 @@ gem 'execjs', :require => false
 group :test do
   gem 'guard-minitest'
   gem 'rack-test'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
 end
