@@ -1,5 +1,1 @@
-Sinatra::Base.configure do
-  Sinatra::Base.set :js_app, {
-    :src => "/scripts/main-built.js",
-  }
-end
+ENV['JS_SRC'] = '/scripts/main-built.js'

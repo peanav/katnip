@@ -2,7 +2,6 @@
 class KatalusApp < Sinatra::Base
 
   get '/' do
-    @js_app = settings.js_app
     slim :index
   end
 

@@ -28,4 +28,4 @@ head
     }
 body
   #container.container
-  script src=@js_app[:src] data-main=@js_app[:data_main] type="text/javascript"
+    script src=ENV['JS_SRC'] data-main=ENV['JS_MAIN'] type="text/javascript"
