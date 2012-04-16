@@ -15,6 +15,7 @@ head
   meta charset="utf-8"
   meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   link href="/styles/bootstrap.css" rel="stylesheet"
+  == yield_content :styles
   less:
     header {
       margin: 100px 0 0 0;
@@ -29,3 +30,4 @@ head
 body
   == yield
   script src=ENV['JS_SRC'] data-main=ENV['JS_MAIN'] type="text/javascript"
+  == yield_content :scripts
