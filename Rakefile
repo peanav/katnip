@@ -17,7 +17,9 @@ namespace :assets do
       Dir['**/*.coffee'].each do |f|
         mkdir_p File.join('../../public/scripts', File.dirname(f))
         compiled_script = CoffeeScript.compile File.read(f), bare: true
-        IO.write(File.join('../../public/scripts', File.dirname(f), File.basename(f, '.coffee') + '.js'), compiled_script)
+        File.open(File.join('../../public/scripts', File.dirname(f), File.basename(f, '.coffee') + '.js'), 'w') do |file|
+          file.puts(compiled_script)
+        end
       end
     end
   end
