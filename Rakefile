@@ -37,7 +37,7 @@ namespace :assets do
     Dir['views/less/*.less'].each do |f|
       app_dir = File.dirname(__FILE__)
       base = File.basename(f,'.less')
-      parser = Less::Parser.new :paths => ['views/less']
+      parser = Less::Parser.new :paths => ['views/less', 'vendor/bootstrap/less']
       tree = parser.parse(File.read(File.join(app_dir, f)))
       File.open(File.join(app_dir, 'public', 'styles', "#{base}.css"), 'w') do |f|
         f.write tree.to_css(:compress => true)
