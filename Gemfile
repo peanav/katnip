@@ -6,6 +6,7 @@ gem 'sinatra', :require => 'sinatra/base'
 gem 'sinatra-contrib', :require => 'sinatra/content_for'
 gem 'slim'
 gem 'less'
+gem 'coffee-script'
 gem 'tilt', :git => 'git://github.com/rtomayko/tilt.git'
 
 gem 'puma'

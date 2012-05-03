@@ -10,4 +10,8 @@ class KatalusApp < Sinatra::Base
     less :"less/#{sheet_name}", :paths => ['views/less']
   end
 
+  get '/scripts/*.js' do |script_name|
+    coffee :"/coffee/#{script_name}", :bare => true
+  end
+
 end

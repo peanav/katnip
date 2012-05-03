@@ -1,13 +1,25 @@
 require 'less'
+require 'coffee-script'
 require 'rake/testtask'
 
 
 namespace :assets do
   desc 'Precompile assets for heroku push'
-  task :precompile => [:heroku_bins, :build_js, :build_less]
+  task :precompile => [:heroku_bins, :compile_coffee, :build_js, :build_less]
 
   task :heroku_bins do
     ENV['PATH'] = "#{File.join(Dir.pwd,'bin')}:" + ENV['PATH']
+  end
+
+  desc 'Compiling Coffee'
+  task :compile_coffee do
+    Dir.chdir 'views/coffee' do
+      Dir['**/*.coffee'].each do |f|
+        mkdir_p File.join('../../public/scripts', File.dirname(f))
+        compiled_script = CoffeeScript.compile File.read(f), bare: true
+        IO.write(File.join('../../public/scripts', File.dirname(f), File.basename(f, '.coffee') + '.js'), compiled_script)
+      end
+    end
   end
 
   desc 'Build JS'
