@@ -1,4 +1,3 @@
-
 class KatalusApp < Sinatra::Base
 
   get '/' do

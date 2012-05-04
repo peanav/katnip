@@ -19,4 +19,6 @@ group :test do
   gem 'rack-test'
   gem 'guard-livereload'
   gem 'rack-livereload'
+  gem 'guard-process'
+  gem 'foreman'
 end

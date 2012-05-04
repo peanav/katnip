@@ -1,10 +1,20 @@
-guard 'minitest' do
-  watch(%r|^spec/.+_spec\.rb|)
-  watch(%r|^lib/(.+)\.rb$|)           { |m| "spec/#{m[1]}_spec.rb" }
-  watch(%r|^spec/spec_helper\.rb|)    { "spec" }
-  watch(%r|^spec/integration_helper\.rb|)    { "spec" }
+group :test do
+  guard :minitest do
+    watch(%r|^spec/.+_spec\.rb|)
+    watch(%r|^lib/(.+)\.rb$|)           { |m| "spec/#{m[1]}_spec.rb" }
+    watch(%r|^spec/spec_helper\.rb|)    { "spec" }
+    watch(%r|^spec/integration_helper\.rb|)    { "spec" }
+  end
 end
 
-guard 'livereload' do
-  watch(%r{public/scripts.+\.(js|html)})
+group :run do
+  guard :process, :name => 'foreman', :command => 'bundle exec puma -p 8000' do
+    watch(%r|^lib/(.+)\.rb$|)
+    watch(%r|^modules/(.+)\.rb$|)
+  end
+
+  guard :livereload do
+    watch(%r{public/scripts.+\.(js|html)})
+    watch(%r{views/coffee.+\.(coffee)})
+  end
 end
