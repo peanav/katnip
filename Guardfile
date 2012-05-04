@@ -14,7 +14,7 @@ group :run do
   end
 
   guard :livereload do
-    watch(%r{public/scripts.+\.(js|html)})
+    watch(%r{public/scripts.+\.(js|html|mustache)})
     watch(%r{views/coffee.+\.(coffee)})
   end
 end
