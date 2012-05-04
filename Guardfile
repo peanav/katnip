@@ -8,7 +8,7 @@ group :test do
 end
 
 group :run do
-  guard :process, :name => 'foreman', :command => 'bundle exec puma -p 8000' do
+  guard :process, :name => 'foreman', :command => 'bundle exec thin start -p 5000' do
     watch(%r|^lib/(.+)\.rb$|)
     watch(%r|^modules/(.+)\.rb$|)
   end

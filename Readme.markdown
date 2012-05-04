@@ -18,7 +18,15 @@ This project is a nice starting point with some baked in goodies
   [Mustache](http://mustache.github.com/),
   [require.js](http://requirejs.org/)
   )
+- [CoffeeScript](http://coffeescript.org/)
 - [MiniTest](https://github.com/seattlerb/minitest) (testing the rubies)
 - [Mocha](http://visionmedia.github.com/mocha/) with [chai](http://chaijs.com/) (js testing)
-- [Puma](http://puma.io/)
+- [Thin](http://code.macournoyer.com/thin/)
+- [Guard](https://github.com/guard/guard)
+- [LiveReload](https://github.com/guard/guard-livereload)
 - Support for precompilation of assests during Heroku deploy
+
+## Getting Started
+
+- bundle exec guard -g test (to watch tests)
+- bundle exec guard -g run (to run and restart thin and live reload)

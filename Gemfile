@@ -9,7 +9,7 @@ gem 'less'
 gem 'coffee-script'
 gem 'tilt', :git => 'git://github.com/rtomayko/tilt.git'
 
-gem 'puma'
+gem 'thin'
 
 #required for heroku to let us use node to precompile js
 gem 'execjs', :require => false
