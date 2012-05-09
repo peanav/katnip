@@ -20,10 +20,12 @@ group :run do
     watch(%r{views/coffee.+\.(coffee)})
   end
 
-  Thread.new do
-    sleep(2)
-    Launchy.open 'http://localhost:5000/'
-    Launchy.open 'http://localhost:5000/scripts/test/runner.html'
+  if(ARGV.include?('-o'))
+    Thread.new do
+      sleep(2)
+      Launchy.open 'http://localhost:5000/'
+      Launchy.open 'http://localhost:5000/scripts/test/runner.html'
+    end
   end
-
 end
+
