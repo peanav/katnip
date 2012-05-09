@@ -37,6 +37,8 @@ GEM
       ffi (~> 1.0.9)
       guard (>= 0.4.2)
       spoon (~> 0.0.1)
+    launchy (2.1.0)
+      addressable (~> 2.2.6)
     less (2.0.10)
       commonjs (~> 0.2.0)
       therubyracer (~> 0.9.9)
@@ -84,6 +86,7 @@ DEPENDENCIES
   guard-livereload
   guard-minitest
   guard-process
+  launchy
   less
   rack-livereload
   rack-test

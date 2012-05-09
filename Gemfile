@@ -21,4 +21,5 @@ group :test do
   gem 'rack-livereload'
   gem 'guard-process'
   gem 'foreman'
+  gem 'launchy'
 end

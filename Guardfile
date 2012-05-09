@@ -8,6 +8,8 @@ group :test do
 end
 
 group :run do
+  require 'launchy'
+
   guard :process, :name => 'foreman', :command => 'bundle exec thin start -p 5000' do
     watch(%r|^lib/(.+)\.rb$|)
     watch(%r|^modules/(.+)\.rb$|)
@@ -17,4 +19,11 @@ group :run do
     watch(%r{public/scripts.+\.(js|html|mustache)})
     watch(%r{views/coffee.+\.(coffee)})
   end
+
+  Thread.new do
+    sleep(2)
+    Launchy.open 'http://localhost:5000/'
+    Launchy.open 'http://localhost:5000/scripts/test/runner.html'
+  end
+
 end
