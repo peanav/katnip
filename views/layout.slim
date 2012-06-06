@@ -18,5 +18,5 @@ head
   == yield_content :styles
 body
   == yield
-  script src=ENV['JS_SRC'] data-main=ENV['JS_MAIN'] type="text/javascript"
+  script src=settings.js_app[:src] data-main=settings.js_app[:data_main] type="text/javascript"
   == yield_content :scripts

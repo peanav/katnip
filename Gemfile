@@ -9,12 +9,14 @@ gem 'less'
 gem 'coffee-script'
 gem 'tilt', :git => 'git://github.com/rtomayko/tilt.git'
 
+gem 'therubyracer'
 gem 'thin'
 
 #required for heroku to let us use node to precompile js
 gem 'execjs', :require => false
 
-group :test do
+group :development, :test do
+  gem 'guard', '~>1.0.0'
   gem 'guard-minitest'
   gem 'rack-test'
   gem 'guard-livereload'
