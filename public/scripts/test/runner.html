@@ -1,19 +1,29 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Mocha Tests</title>
-  <link rel="stylesheet" href="mocha.css" />
+  <title>Tests</title>
+  <link rel="stylesheet" href="jasmine.css" />
   <script src="../require.js"></script>
   <script type="text/javascript">
     require.config({ baseUrl:'../' });
-    require(['require', 'test/lib/chai', 'test/lib/mocha'], function(require, chai) {
-      mocha.setup('bdd');
-      window.should = chai.should();
-      require(['test/tests'], function() { mocha.run(); });
+    require([
+        'require',
+        'test/lib/console-reporter',
+        'test/lib/jasmine',
+        'test/lib/jasmine-html',
+        ], function(require, ConsoleReporter) {
+      var jasmineEnv = jasmine.getEnv();
+      window.consoleReporter = new ConsoleReporter();
+      jasmineEnv.addReporter(new jasmine.HtmlReporter());
+      jasmineEnv.addReporter(window.consoleReporter);
+
+      require(['test/tests'], function(){
+        jasmineEnv.execute();
+      });
     });
   </script>
 </head>
 <body>
-  <div id="mocha"></div>
+  <a href="#"  onclick="webkitNotifications.requestPermission(); return false;" style="font-size: 10px; color: #999;">Request Notification Permission</a>
 </body>
 </html>
