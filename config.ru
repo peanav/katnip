@@ -1,10 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-# GZIP the stuff
 use Rack::Deflater
+use Rack::MethodOverride
 
-# Serve the assets need for live reload to work during development
-if(ENV['RACK_ENV'] == 'development' && !IS_HEROKU)
+if ENV['GUARD_NOTIFY'] && ENV['RACK_ENV'] == 'development'
+  # Serve the assets need for live reload to work during development
   require 'rack-livereload'
   use Rack::LiveReload
 end
