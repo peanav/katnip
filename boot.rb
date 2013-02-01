@@ -1,5 +1,4 @@
 APP_ROOT = File.dirname(__FILE__)
-IS_HEROKU = !!ENV['SHARED_DATABASE_URL']
 require 'bundler/setup'
 Bundler.require
 
