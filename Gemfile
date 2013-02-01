@@ -9,7 +9,7 @@ gem 'less'
 gem 'coffee-script'
 gem 'tilt', :git => 'git://github.com/rtomayko/tilt.git'
 
-gem 'therubyracer'
+gem 'therubyracer', '0.10.2'
 gem 'thin'
 
 #required for heroku to let us use node to precompile js
