@@ -4,12 +4,12 @@ gem 'rake', :require => false
 
 gem 'sinatra', :require => 'sinatra/base'
 gem 'sinatra-contrib', :require => 'sinatra/content_for'
+gem 'thin'
 gem 'slim'
 gem 'sass'
 gem 'coffee-script'
-gem 'tilt'
 
-gem 'thin'
+gem 'therubyracer', '0.10.2'
 
 #required for heroku to let us use node to precompile js
 gem 'execjs', :require => false
