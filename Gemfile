@@ -1,15 +1,14 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'rake', :require => false
 
 gem 'sinatra', :require => 'sinatra/base'
 gem 'sinatra-contrib', :require => 'sinatra/content_for'
 gem 'slim'
-gem 'less'
+gem 'sass'
 gem 'coffee-script'
-gem 'tilt', :git => 'git://github.com/rtomayko/tilt.git'
+gem 'tilt'
 
-gem 'therubyracer'
 gem 'thin'
 
 #required for heroku to let us use node to precompile js

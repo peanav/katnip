@@ -1,11 +1,11 @@
-require 'less'
+require 'sass'
 require 'coffee-script'
 require 'rake/testtask'
 
 
 namespace :assets do
   desc 'Precompile assets for heroku push'
-  task :precompile => [:heroku_bins, :compile_coffee, :build_js, :build_less]
+  task :precompile => [:heroku_bins, :compile_coffee, :build_js, :build_css]
 
   task :heroku_bins do
     ENV['PATH'] = "#{File.join(Dir.pwd,'bin')}:" + ENV['PATH']
@@ -32,15 +32,14 @@ namespace :assets do
   end
 
   desc 'Build CSS'
-  task :build_less do
+  task :build_css do
     mkdir_p 'public/styles'
-    Dir['views/less/*.less'].each do |f|
+    Dir['views/scss/*.scss'].each do |f|
       app_dir = File.dirname(__FILE__)
-      base = File.basename(f,'.less')
-      parser = Less::Parser.new :paths => ['views/less', 'vendor/bootstrap/less']
-      tree = parser.parse(File.read(File.join(app_dir, f)))
+      base = File.basename(f,'.scss')
+      engine = Sass::Engine.new(File.read(File.join(app_dir, f)), :syntax => :scss, :load_paths => ['views/sass', 'vendor/sass-bootstrap/lib'])
       File.open(File.join(app_dir, 'public', 'styles', "#{base}.css"), 'w') do |f|
-        f.write tree.to_css(:compress => true)
+        f.write engine.render
       end
     end
   end

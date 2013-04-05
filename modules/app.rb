@@ -6,7 +6,7 @@ class KatalusApp < Sinatra::Base
 
   get '/styles/*.css' do |sheet_name|
     content_type :css
-    less :"less/#{sheet_name}", :paths => ['views/less', 'vendor/bootstrap/less']
+    scss :"scss/#{sheet_name}", :load_paths => ['views/sass', 'vendor/sass-bootstrap/lib']
   end
 
   get '/scripts/*.js' do |script_name|

@@ -4,3 +4,5 @@ vendor/bundle
 .DS_Store
 public/styles
 *-built.js
+.sass-cache
+.ruby-version

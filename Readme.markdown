@@ -9,7 +9,7 @@ This project is a nice starting point with some baked in goodies
 
 - [Sinatra](http://www.sinatrarb.com/)
 - [Slim](http://slim-lang.com/)
-- [Less](http://lesscss.org/)
+- [Sass](http://sass-lang.com/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - Javascript Stack (
   [jQuery](http://jquery.com/),
