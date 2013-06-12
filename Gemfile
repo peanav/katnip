@@ -7,7 +7,6 @@ gem 'sinatra-contrib', :require => 'sinatra/content_for'
 gem 'thin'
 gem 'slim'
 gem 'sass'
-gem 'coffee-script'
 
 gem 'therubyracer', '0.10.2'
 

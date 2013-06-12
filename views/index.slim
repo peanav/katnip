@@ -1,1 +1,26 @@
-#container.container
+doctype html
+/!
+  !
+  ______   ____ _____    ____ _____ ___  __
+  \____ \_/ __ \\__  \  /    \\__  \\  \/ /
+  |  |_> >  ___/ / __ \|   |  \/ __ \\   /
+  |   __/ \___  >____  /___|  (____  /\_/
+  |__|
+  !
+
+/ Condidtional IE comment that will put a ie class on the main html element if IE
+/[ if IE ]
+  html.ie
+== '<!--[if !(IE)]><!--> <html class=""> <!--<![endif]-->'
+head
+  title sinatra + angular = crazy awesome
+  meta charset="utf-8"
+  meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  link href="/styles/app.css" rel="stylesheet"
+body
+  <!-- Put your bootstrap html here -->
+
+  - if ENV['RACK_ENV'] == 'development'
+    script src="scripts/jquery.js"
+    script src="scripts/lodash.js"
+    script src="scripts/angular.js"

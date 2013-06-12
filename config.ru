@@ -10,5 +10,5 @@ if ENV['GUARD_NOTIFY'] && ENV['RACK_ENV'] == 'development'
 end
 
 map '/' do
-  run KatalusApp
+  run App
 end
