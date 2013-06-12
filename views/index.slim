@@ -16,11 +16,13 @@ head
   title sinatra + angular = crazy awesome
   meta charset="utf-8"
   meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  link href="/styles/app.css" rel="stylesheet"
+  link href="/assets/app.css" rel="stylesheet"
 body
   <!-- Put your bootstrap html here -->
 
-  - if ENV['RACK_ENV'] == 'development'
-    script src="scripts/lib/jquery.js"
-    script src="scripts/lib/lodash.js"
-    script src="scripts/lib/angular.js"
+  - if ENV['RACK_ENV'] == 'production'
+    script src="/assets/app.js"
+  -else
+    script src="/assets/lib/jquery.js"
+    script src="/assets/lib/lodash.js"
+    script src="/assets/lib/angular.js"

@@ -12,3 +12,10 @@ end
 map '/' do
   run App
 end
+
+map '/assets' do
+  assets = Sprockets::Environment.new
+  assets.append_path 'assets/scripts'
+  assets.append_path 'assets/styles'
+  run assets
+end
